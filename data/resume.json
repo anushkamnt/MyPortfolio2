@@ -1,0 +1,120 @@
+{
+  "personal": {
+    "name": "Anushka Mahanta",
+    "title": "Integrated MA in English Literature",
+    "email": "anushkamnt04@gmail.com",
+    "phone": "+91-9864743150",
+    "linkedin": "https://linkedin.com/in/anushka-mahanta-702a8524a/",
+    "university": "Tezpur University",
+    "location": "Assam, India"
+  },
+  "hero": {
+    "heading": "Crafting narratives through academic excellence",
+    "subheading": "Literary scholar, researcher, and content strategist exploring the intersection of language, culture, and storytelling"
+  },
+  "education": [
+    {
+      "degree": "Integrated MA in English",
+      "institution": "Tezpur University",
+      "location": "Tezpur, Assam, India",
+      "duration": "July 2020 - June 2025",
+      "highlights": [
+        "Critical Analysis",
+        "Text Interpretation",
+        "Academic Writing",
+        "Content Writing",
+        "Scholarly Research",
+        "Communication"
+      ]
+    }
+  ],
+  "experience": [
+    {
+      "title": "Master's In English",
+      "institution": "North Eastern Hill University",
+      "location": "Shillong, Meghalaya, India",
+      "date": "Feb 2025",
+      "details": "International Conference On Indian Linguistic Tradition And Indigenous Knowledge System: Echoes of the past: Oral Traditions and the Preservation of India's Cultural Identity",
+      "achievements": [
+        "Analyzed folk tales, songs, and myths as carriers of collective memory and identity",
+        "Explored the role of storytelling in sustaining indigenous values and histories across generations",
+        "Investigated the impact of modernization and globalization on traditional oral practices"
+      ]
+    }
+  ],
+  "papers": [
+    {
+      "title": "Constructing Worth in a Patriarchal World in Mamang Dai's The Legends of Pensam",
+      "date": "Jan 2025 – May 2025",
+      "institution": "Tezpur University",
+      "highlights": [
+        "Textual analysis highlights how women in male-dominated societies are persecuted, particularly women from Northeast India",
+        "Edward Said's concept of 'othering' to illustrate the social isolation and stigmatization experienced by widows in tribal society"
+      ]
+    },
+    {
+      "title": "English and illiteracy, both are opposing houses on the same street",
+      "date": "Jan 2023 – May 2023",
+      "institution": "Tezpur University",
+      "highlights": [
+        "Researched the arrival, development, and current status of the English language in India",
+        "Analyzed the influence of English on Indian youth and illiterate populations",
+        "Conducted a case study on uneducated individuals fluent in spoken English",
+        "Discovered that some illiterate speakers exhibit stronger oral English skills than formally educated graduates",
+        "Explored the socio-linguistic factors contributing to English fluency among non-literate speakers"
+      ]
+    },
+    {
+      "title": "Peter Pan as Children's Literature Text",
+      "date": "Aug 2022 – Dec 2022",
+      "institution": "Tezpur University",
+      "highlights": ["Identified and analyzed the key elements that classify the book as a children's text"]
+    }
+  ],
+  "skills": {
+    "writing": [
+      "Academic Writing",
+      "Copyediting",
+      "Proofreading",
+      "Creative Writing",
+      "Content Development",
+      "Blogging",
+      "Scriptwriting"
+    ],
+    "research": [
+      "Literary Analysis",
+      "Critical Reading",
+      "Textual Interpretation",
+      "Scholarly Research",
+      "Qualitative Analysis"
+    ],
+    "communication": ["Public Speaking", "Presentation", "Interpersonal Skills", "Cross-cultural Communication"],
+    "digital": [
+      "Microsoft Office Suite",
+      "Google Workspace",
+      "Canva",
+      "Wordpress",
+      "Google Scholar",
+      "JSTOR",
+      "ResearchGate",
+      "Email Communication",
+      "Social Media Management",
+      "Content Strategy"
+    ]
+  },
+  "interests": ["Literature", "Journalism", "Creative Media", "Publishing", "Linguistics", "Storytelling", "Editing"],
+  "volunteering": [
+    {
+      "title": "Volunteer At Gyanmalini Under NSS",
+      "description": "Taught underprivileged students in nearby schools, assisting them with academic subjects and promoting access to quality education. Collaborated with fellow volunteers to organize engaging learning sessions and mentorship activities."
+    },
+    {
+      "title": "Workshop cum seminar on Minor languages of the North East Region",
+      "description": "Engaged at a one-day workshop and seminar focused on linguistic diversity and cultural preservation."
+    },
+    {
+      "title": "Participated in Spit-Free India Movement",
+      "description": "Contributed to public health awareness as a key volunteer in the university's Spit Free India campaign."
+    }
+  ]
+}
