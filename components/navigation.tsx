@@ -84,7 +84,7 @@ function MobileMenu({
 
       {isOpen && (
         <div className="absolute top-16 right-0 w-48 glass border rounded-b-lg">
-          <div className="px-2 pt-2 pb-3 space-y-1">
+          <div className="px-2 pt-2 pb-3 space-y-1 bg-black">
             {links.map((link) => (
               <button
                 key={link.id}
