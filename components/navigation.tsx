@@ -27,22 +27,33 @@ export function Navigation() {
         element: document.getElementById(link.id),
       }))
 
+      const isAtBottom = window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 100
+      
+      let closestSection = sections[0]
+      let closestDistance = Number.POSITIVE_INFINITY
       let currentActive = "hero"
 
       for (const section of sections) {
         if (section.element) {
           const rect = section.element.getBoundingClientRect()
-          // If section is in viewport (within 200px from top)
-          if (rect.top <= 200 && rect.bottom > 0) {
-            currentActive = section.id
+          const distance = Math.abs(rect.top)
+
+          if (distance < closestDistance && rect.top < window.innerHeight) {
+            closestDistance = distance
+            closestSection = section
           }
         }
       }
+      currentActive = closestSection.id
 
+      if (isAtBottom) {
+        currentActive = "contact"
+      }
       setActiveSection(currentActive)
     }
 
     window.addEventListener("scroll", handleScroll)
+    handleScroll()
     return () => window.removeEventListener("scroll", handleScroll)
   }, [])
 
