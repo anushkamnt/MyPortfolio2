@@ -1,6 +1,6 @@
 "use client"
 
-import { useState } from "react"
+import { useState,useEffect } from "react"
 
 interface NavLink {
   id: string
@@ -20,6 +20,32 @@ const navLinks: NavLink[] = [
 export function Navigation() {
   const [activeSection, setActiveSection] = useState("hero")
 
+  useEffect(() => {
+    const handleScroll = () => {
+      const sections = navLinks.map((link) => ({
+        id: link.id,
+        element: document.getElementById(link.id),
+      }))
+
+      let currentActive = "hero"
+
+      for (const section of sections) {
+        if (section.element) {
+          const rect = section.element.getBoundingClientRect()
+          // If section is in viewport (within 200px from top)
+          if (rect.top <= 200 && rect.bottom > 0) {
+            currentActive = section.id
+          }
+        }
+      }
+
+      setActiveSection(currentActive)
+    }
+
+    window.addEventListener("scroll", handleScroll)
+    return () => window.removeEventListener("scroll", handleScroll)
+  }, [])
+
   const handleNavClick = (id: string) => {
     setActiveSection(id)
     const element = document.getElementById(id)
@@ -31,7 +57,7 @@ export function Navigation() {
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
-          <div className="flex-shrink-0">
+          <div className="shrink-0">
             <span className="gradient-text text-xl font-bold">AM</span>
           </div>
 
