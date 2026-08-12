@@ -28,7 +28,19 @@
       ]
     }
   ],
+  "workExperience": [
+    {
+      "role": "Data Annotator",
+      "company": "Mindtel Noida",
+      "location": "New Delhi",
+      "client": "Client: Innodata Inc.",
+      "period": "Nov 2025 - Jan 2026",
+      "description": "Worked on behalf of enterprise client Innodata Inc. Responsible for reviewing, creating, and refining high-quality datasets to train, fine-tune, and evaluate advanced AI systems and Large Language Models (LLMs).",
+      "skills": ["Data Annotation", "LLM Training & Tuning", "AI Evaluation", "Quality Assurance", "Text Refining"]
+    }
+  ],
   "experience": [
+
     {
       "title": "Master's In English",
       "institution": "North Eastern Hill University",
