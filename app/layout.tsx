@@ -48,7 +48,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`dark ${inter.variable} ${playfair.variable}`}>
-      <body className="font-sans antialiased bg-[#080914] text-slate-100 min-h-screen relative overflow-x-hidden">
+      <body className="font-sans antialiased bg-background text-foreground min-h-screen relative overflow-x-hidden">
         <BackgroundEffects />
         <div className="relative z-10">
           {children}

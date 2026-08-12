@@ -1,17 +1,24 @@
 "use client"
 
-import { motion } from "framer-motion"
-import { HeartHandshake, Users, Globe, ShieldCheck } from "lucide-react"
+import { motion, useScroll, useTransform } from "framer-motion"
+import { Heart, Globe2 } from "lucide-react"
 import resumeData from "@/data/resume.json"
-
-const iconMap = [Users, Globe, ShieldCheck]
+import { useRef } from "react"
 
 export function VolunteeringSection() {
   const { volunteering } = resumeData
+  const containerRef = useRef<HTMLDivElement>(null)
+  
+  const { scrollYProgress } = useScroll({
+    target: containerRef,
+    offset: ["start end", "end start"]
+  })
+  
+  const globeY = useTransform(scrollYProgress, [0, 1], ["-150px", "150px"])
 
   return (
-    <section id="volunteering" className="py-24 px-4 sm:px-6 lg:px-8 relative">
-      <div className="max-w-5xl mx-auto">
+    <section id="volunteering" ref={containerRef} className="py-16 lg:py-32 px-4 sm:px-6 lg:px-8 relative bg-background/50">
+      <div className="max-w-7xl mx-auto">
         
         {/* Section Header */}
         <motion.div 
@@ -19,41 +26,53 @@ export function VolunteeringSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="mb-16 text-center sm:text-left"
+          className="mb-20 text-center"
         >
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-cyan-500/10 border border-cyan-500/30 text-cyan-300 text-xs font-mono mb-4">
-            <HeartHandshake className="w-3.5 h-3.5 text-cyan-400" />
-            <span>COMMUNITY ENGAGEMENT & OUTREACH</span>
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-accent/10 border border-accent/30 text-accent text-xs font-serif mb-6">
+            <Heart className="w-3.5 h-3.5 text-accent" />
+            <span>COMMUNITY ENGAGEMENT</span>
           </div>
-          <h2 className="text-3xl sm:text-5xl font-extrabold tracking-tight">
-            <span className="gradient-text">Volunteering</span> & Social Leadership
+          <h2 className="text-4xl sm:text-6xl font-serif font-bold tracking-tight mb-6">
+            Volunteering & <span className="text-gradient-elegant">Social Impact</span>
           </h2>
-          <div className="h-1 w-24 bg-gradient-to-r from-cyan-400 via-purple-500 to-transparent rounded-full mt-4" />
+          <div className="h-1 w-24 bg-gradient-to-r from-accent via-secondary to-transparent rounded-full mx-auto mt-8" />
         </motion.div>
 
-        {/* Community Cards */}
-        <div className="grid gap-6">
-          {volunteering.map((activity, index) => {
-            const Icon = iconMap[index % iconMap.length]
+        {/* Staggered Cards Layout */}
+        <div className="space-y-16 lg:space-y-24">
+          {volunteering.map((item, index) => {
+            const isEven = index % 2 === 0
+            
             return (
               <motion.div
                 key={index}
-                initial={{ opacity: 0, x: index % 2 === 0 ? -25 : 25 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.15 }}
-                className="glass-card glass-card-hover p-6 sm:p-8 rounded-3xl relative overflow-hidden border-l-4 border-l-cyan-400"
+                initial={{ opacity: 0, x: isEven ? -40 : 40, y: 20 }}
+                whileInView={{ opacity: 1, x: 0, y: 0 }}
+                viewport={{ once: true, margin: "-100px" }}
+                transition={{ duration: 0.8, ease: "easeOut" }}
+                className={`flex flex-col lg:flex-row gap-8 lg:gap-16 items-center ${!isEven ? 'lg:flex-row-reverse' : ''}`}
               >
-                <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 rounded-2xl bg-cyan-500/10 border border-cyan-500/30 flex items-center justify-center text-cyan-400 shrink-0 mt-1">
-                    <Icon className="w-6 h-6" />
-                  </div>
-                  <div>
-                    <h3 className="text-xl sm:text-2xl font-bold text-slate-100 mb-2">
-                      {activity.title}
+                {/* Visual Anchor / Abstract Graphic */}
+                <div className="w-full lg:w-5/12 flex justify-center perspective-1000">
+                  <motion.div 
+                    style={{ y: globeY }}
+                    className="relative w-48 h-48 sm:w-64 sm:h-64 rounded-[2.5rem] rotate-3 glass border border-white/5 flex items-center justify-center group overflow-hidden shadow-2xl"
+                  >
+                    <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-accent/20 opacity-50 group-hover:opacity-100 transition-opacity duration-700" />
+                    <Globe2 className="w-16 h-16 sm:w-24 sm:h-24 text-primary/40 group-hover:text-primary/70 transition-colors duration-500 relative z-10" />
+                  </motion.div>
+                </div>
+
+                {/* Content Card */}
+                <div className="w-full lg:w-7/12">
+                  <div className="glass-card p-8 sm:p-12 rounded-3xl relative overflow-hidden group hover:bg-white/[0.03] transition-colors shadow-2xl">
+                    <div className="absolute top-0 right-0 w-32 h-32 bg-accent/10 rounded-full blur-3xl pointer-events-none group-hover:bg-accent/20 transition-colors duration-700" />
+                    
+                    <h3 className="text-2xl sm:text-4xl font-serif font-bold text-foreground mb-6 relative z-10 leading-tight">
+                      {item.title}
                     </h3>
-                    <p className="text-slate-300 text-sm sm:text-base leading-relaxed font-light">
-                      {activity.description}
+                    <p className="text-muted-foreground text-lg leading-relaxed font-light relative z-10">
+                      {item.description}
                     </p>
                   </div>
                 </div>
@@ -66,4 +85,3 @@ export function VolunteeringSection() {
     </section>
   )
 }
-
