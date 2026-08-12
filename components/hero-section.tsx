@@ -101,7 +101,7 @@ export function HeroSection() {
             transition={{ duration: 1.2, delay: 0.4, ease: "easeOut" }}
             className="space-y-4 text-center md:text-left"
           >
-            <h1 className="text-6xl sm:text-7xl lg:text-8xl xl:text-9xl font-serif font-bold tracking-tighter leading-[0.9] relative">
+            <h1 className="text-[3.5rem] leading-[0.9] sm:text-7xl lg:text-8xl xl:text-9xl font-serif font-bold tracking-tighter relative">
               <span className="text-foreground">{personal.name.split(" ")[0]}</span>
               <br />
               <span className="text-gradient-elegant">{personal.name.split(" ")[1]}</span>

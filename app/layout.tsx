@@ -47,10 +47,10 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en" className={`dark ${inter.variable} ${playfair.variable}`}>
-      <body className="font-sans antialiased bg-background text-foreground min-h-screen relative overflow-x-hidden">
+    <html lang="en" className={`dark ${inter.variable} ${playfair.variable} overflow-x-hidden`}>
+      <body className="font-sans antialiased bg-background text-foreground min-h-screen relative overflow-x-hidden w-full max-w-[100vw]">
         <BackgroundEffects />
-        <div className="relative z-10">
+        <div className="relative z-10 w-full overflow-x-hidden">
           {children}
         </div>
         <Analytics />
