@@ -67,7 +67,7 @@ export function ContactSection() {
                       {method.label}
                     </span>
                     {method.href ? (
-                      <a href={method.href} target="_blank" rel="noopener noreferrer" className="text-lg sm:text-xl font-serif font-medium text-foreground hover:text-primary transition-colors">
+                      <a href={method.href} target="_blank" rel="noopener noreferrer" className="text-lg sm:text-xl font-sans font-medium text-foreground hover:text-primary transition-colors">
                         {method.value}
                       </a>
                     ) : (
